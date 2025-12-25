@@ -1,0 +1,23 @@
+retraining:
+  schedule_days: 7
+  performance_threshold: 0.1
+  drift_threshold: 0.1
+  min_new_data_size: 100
+  max_training_days: 90
+
+model:
+  target_metric: "pr_auc"
+  improvement_threshold: 0.02
+
+monitoring:
+  drift_check_frequency: "daily"
+  performance_log_retention_days: 30
+  alert_thresholds:
+    accuracy_drop: 0.1
+    precision_drop: 0.1
+    recall_drop: 0.1
+
+api:
+  max_batch_size: 1000
+  prediction_timeout: 30
+  model_reload_frequency: "weekly"
