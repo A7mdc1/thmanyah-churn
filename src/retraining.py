@@ -228,7 +228,8 @@ class RetrainingPipeline:
                 return False
 
             # Load full data and extract reference window
-            loader = ChurnDataLoader(data_path="data/")
+            from .config import DATA_DIR
+            loader = ChurnDataLoader(data_path=DATA_DIR)
             full_data = loader.load_event_logs("customer_churn_mini.json")
             full_data = loader.basic_preprocessing(full_data)
 
@@ -685,7 +686,8 @@ def main():
     pipeline = RetrainingPipeline()
 
     # Load real data using ChurnDataLoader
-    loader = ChurnDataLoader(data_path="../data/")
+    from .config import DATA_DIR
+    loader = ChurnDataLoader(data_path=DATA_DIR)
     print("Loading customer_churn_mini.json...")
     full_data = loader.load_event_logs("customer_churn_mini.json")
     full_data = loader.basic_preprocessing(full_data)
