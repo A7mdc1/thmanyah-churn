@@ -18,6 +18,12 @@ var/
 wheels/
 *.egg-info/
 .installed.cfg
+
+# UV lock file
+uv.lock
+
+# Temporary files
+ruff_errors.txt
 *.egg
 
 # Virtual environments
